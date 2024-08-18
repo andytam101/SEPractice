@@ -135,10 +135,12 @@ const generateEquation = () => {
     let eq1 = new Array(3)
     let eq2 = new Array(3)
 
-    eq1[0] = generateNonZero(coefficientsMin, coefficientsMax)
-    eq1[1] = generateNonZero(coefficientsMin, coefficientsMax)
-    eq2[0] = generateNonZero(coefficientsMin, coefficientsMax)
-    eq2[1] = generateNonZero(coefficientsMin, coefficientsMax)
+    do {
+        eq1[0] = generateNonZero(coefficientsMin, coefficientsMax)
+        eq1[1] = generateNonZero(coefficientsMin, coefficientsMax)
+        eq2[0] = generateNonZero(coefficientsMin, coefficientsMax)
+        eq2[1] = generateNonZero(coefficientsMin, coefficientsMax)
+    } while (eq1[0] * eq2[1] == eq1[1] * eq2[0])
 
     // generate random solution for x and y
     x = generateNonZero(answerMin, answerMax, isInteger=true)
