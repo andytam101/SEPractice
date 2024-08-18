@@ -40,6 +40,7 @@ $("form").submit(e => {
 
     // show status
     displayResult(ans)
+    $("#submit-btn").attr("disabled", true)
 })
 
 const newQuestion = () => {
@@ -49,6 +50,7 @@ const newQuestion = () => {
     $("#x-val").val("")
     $("#y-val").val("")
     $("#results").addClass("d-none")
+    $("#submit-btn").attr("disabled", false)
 }
 
 
